@@ -23,7 +23,12 @@ require('mason-lspconfig').setup({
 		'tsserver',
 		'eslint',
 		'rust_analyzer',
-	},
+        'pyright',
+        'pylsp',
+        'htmx-lsp',
+        'html',
+        'cssls',
+    },
 	handlers = {
 		lsp.default_setup,
 	},
