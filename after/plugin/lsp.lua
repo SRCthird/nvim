@@ -25,7 +25,6 @@ require('mason-lspconfig').setup({
 		'rust_analyzer',
         'pyright',
         'pylsp',
-        'htmx-lsp',
         'html',
         'cssls',
     },

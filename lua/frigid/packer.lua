@@ -38,4 +38,11 @@ return require('packer').startup(function(use)
     use {'nvim-tree/nvim-web-devicons'}
     use {'ahmedkhalf/project.nvim'}
     use {'mhinz/vim-startify'}
+    use {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    }
 end)

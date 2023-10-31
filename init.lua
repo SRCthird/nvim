@@ -22,15 +22,16 @@ let g:startify_custom_header = map(s:startify_ascii_header +
 let g:startify_lists = [
     "\ { 'type': 'files', 'header': ['   Files'] },
     \ { 'type': 'dir', 'header': ['   Current Dir '. getcwd()] },
-    "\ { 'type': 'sessions', 'header': ['   Sessions'] },
+    \ { 'type': 'sessions', 'header': ['   Sessions'] },
     \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
     \ ]
 
 let g:startify_bookmarks = [
-    \ {'b': '$HOME\\AppData\\Local\\nvim'},
-    \ {'p': '~/projects'},
-    \ {'c': '~/.vimrc'},
-    \ {'z': '~/.zshrc'},
+    \ {'b': 'C:\Users\M312559\AppData\Local\nvim'},
+    \ {'a': '$HOME\AppData\Local\nvim'},
+    \ {'p': 'C:\operations-interface'},
+    \ {'c': 'C:\operations-nexus'},
+    \ {'z': 'C:\Users\M312559\OneDrive - MerckGroup\Documents\Programs'},
     \ ]
 
 " Customize the appearance
