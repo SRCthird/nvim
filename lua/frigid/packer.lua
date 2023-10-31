@@ -5,12 +5,12 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim'}
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = {{ 'nvim-lua/plenary.nvim'}}
     }
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use {'catppuccin/nvim', as = 'catppuccin' }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -39,10 +39,10 @@ return require('packer').startup(function(use)
     use {'ahmedkhalf/project.nvim'}
     use {'mhinz/vim-startify'}
     use {
-        "kdheepak/lazygit.nvim",
+        'kdheepak/lazygit.nvim',
         -- optional for floating window border decoration
         requires = {
-            "nvim-lua/plenary.nvim",
+            'nvim-lua/plenary.nvim',
         },
     }
 end)
