@@ -149,10 +149,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["project.nvim"] = {
+  ["tabnine-nvim"] = {
     loaded = true,
-    path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\project.nvim",
-    url = "https://github.com/ahmedkhalf/project.nvim"
+    path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tabnine-nvim",
+    url = "https://github.com/codota/tabnine-nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

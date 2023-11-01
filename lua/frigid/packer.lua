@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
-            --- Uncomment these if you want to manage LSP servers from neovim
             {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
 
@@ -36,7 +35,6 @@ return require('packer').startup(function(use)
     }
     use {'nvim-tree/nvim-tree.lua'}
     use {'nvim-tree/nvim-web-devicons'}
-    use {'ahmedkhalf/project.nvim'}
     use {'mhinz/vim-startify'}
     use {
         'kdheepak/lazygit.nvim',
@@ -44,5 +42,9 @@ return require('packer').startup(function(use)
         requires = {
             'nvim-lua/plenary.nvim',
         },
+    }
+    use {
+        'codota/tabnine-nvim', 
+        run = './dl_binaries.sh'
     }
 end)
