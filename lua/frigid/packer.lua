@@ -43,8 +43,5 @@ return require('packer').startup(function(use)
             'nvim-lua/plenary.nvim',
         },
     }
-    use {
-        'codota/tabnine-nvim', 
-        run = './dl_binaries.sh'
-    }
+    use {'terrortylor/nvim-comment'}
 end)

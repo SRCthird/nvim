@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
@@ -148,11 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["tabnine-nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\M312559\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tabnine-nvim",
-    url = "https://github.com/codota/tabnine-nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

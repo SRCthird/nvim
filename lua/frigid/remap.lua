@@ -39,3 +39,4 @@ vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>") -- Writes and calls the
 
 vim.keymap.set("n", "<C-x>", ":NvimTreeToggle<CR>", { silent = true }) --  Toggle Nvim Tree View
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) -- Toggle UndoTree view
+vim.keymap.set({"n", "v"}, "<C-r>", ":'<,'>CommentToggle<CR>")
