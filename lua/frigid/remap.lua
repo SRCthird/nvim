@@ -45,4 +45,4 @@ vim.keymap.set("v", "<C-r>", ":'<,'>CommentToggle<CR>") -- Toggles Comment for m
 
 vim.keymap.set("n", "<TAB>", ":bnext<CR>") -- Tab to next buffer
 vim.keymap.set("n", "<S-TAB>", ":bprev<CR>") -- Tab to previous buffer
-vim.keymap.set("n", "<leader>qq<CR>", ":bdelete!") -- Deletes current buffer
+vim.keymap.set("n", "<leader>qq", ":bdelete!<CR>") -- Deletes current buffer
