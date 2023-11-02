@@ -32,6 +32,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz") -- Go to next item in list
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz") -- Go to prev item in list
 vim.keymap.set("n", "<TAB>", ":bnext<CR>") -- Tab to next buffer
 vim.keymap.set("n", "<S-TAB>", ":bprev<CR>") -- Tab to previous buffer
+vim.keymap.set('n', '<C-Up>', '<Up>zz') -- Center screen while scrolling up
+vim.keymap.set('n', '<C-Down>', '<Down>zz') -- Center screen while scrolling down
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace all instances of selected word
 
@@ -42,3 +44,4 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) -- Toggle UndoTree view
 
 vim.keymap.set("n", "<C-r>", ":CommentToggle<CR>") -- Toggles Comment for current line
 vim.keymap.set("v", "<C-r>", ":'<,'>CommentToggle<CR>") -- Toggles Comment for multiple lines
+
