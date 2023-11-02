@@ -20,7 +20,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- Hard delete
 
 vim.keymap.set("i", "<C-c>", "<Esc>") -- Remap to escape
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- Formats page based on lsp
 
 vim.keymap.set("n", "n", "nzzzv") -- Find next search query
 vim.keymap.set("n", "N", "Nzzzv") -- Find prev search query
