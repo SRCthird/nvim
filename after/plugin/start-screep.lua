@@ -26,7 +26,7 @@ vim.g.startify_lists = {
 -- Set bookmarks
 vim.g.startify_bookmarks = {
   { b = 'C:\\Users\\M312559\\AppData\\Local\\nvim' },
-  { a = '$HOME\\AppData\\Local\\nvim' },
+  { a = '~\\AppData\\Local\\nvim' },
   { p = 'C:\\operations-interface' },
   { c = 'C:\\operations-nexus' },
   { z = 'C:\\Users\\M312559\\OneDrive - MerckGroup\\Documents\\Programs' },
