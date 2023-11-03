@@ -1,6 +1,5 @@
 vim.g.mapleader = " " -- Set <leader> as space
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- :Explore (Disabled with nvim-trea)
-vim.api.nvim_create_user_command('Q', 'q', {force = true}) -- defines :Q as :q
 
 vim.keymap.set("n", "J", "mzJ`z") -- Append next line to current
 
@@ -20,7 +19,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- Hard delete
 
 vim.keymap.set("i", "<C-c>", "<Esc>") -- Remap to escape
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- Formats page based on lsp
 
 vim.keymap.set("n", "n", "nzzzv") -- Find next search query
 vim.keymap.set("n", "N", "Nzzzv") -- Find prev search query
@@ -30,8 +29,8 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz") -- Go to next error
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz") -- Go to prev error
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz") -- Go to next item in list 
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz") -- Go to prev item in list
-vim.keymap.set("n", "<TAB>", ":bnext<CR>") -- Tab to next buffer
-vim.keymap.set("n", "<S-TAB>", ":bprev<CR>") -- Tab to previous buffer
+vim.keymap.set('n', '<C-Up>', '<Up>zz') -- Center screen while scrolling up
+vim.keymap.set('n', '<C-Down>', '<Down>zz') -- Center screen while scrolling down
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace all instances of selected word
 
@@ -42,3 +41,13 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) -- Toggle UndoTree view
 
 vim.keymap.set("n", "<C-r>", ":CommentToggle<CR>") -- Toggles Comment for current line
 vim.keymap.set("v", "<C-r>", ":'<,'>CommentToggle<CR>") -- Toggles Comment for multiple lines
+
+vim.keymap.set("n", "<TAB>", ":bnext<CR>") -- Tab to next buffer
+vim.keymap.set("n", "<S-TAB>", ":bprev<CR>") -- Tab to previous buffer
+vim.keymap.set("n", "<leader>qq", ":bdelete!<CR>") -- Deletes current buffer
+
+-- Commands that help me because I never let go of shift fast enough
+vim.api.nvim_create_user_command('Q', 'q', {force = true}) -- defines :Q as :q
+vim.api.nvim_create_user_command('W', 'w', {force = true}) -- Defines :W as :w
+
+vim.keymap.set("n", "<leader>dj", "ipython manage.py runserver<CR>")
