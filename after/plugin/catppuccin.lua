@@ -38,8 +38,8 @@ require("catppuccin").setup({
     },
     color_overrides = {},
     custom_highlights = {
-        -- Comment = {fg = "#abb2bf" },
-        Comment = {fg = random_color()}
+        Comment = {fg = random_color()},
+        String = {fg = "#327831"},
     },
     integrations = {
         cmp = true,
