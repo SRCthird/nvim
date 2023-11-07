@@ -6,10 +6,9 @@ vim.api.nvim_create_user_command(
             level = 'light'
         end
         vim.api.nvim_echo({{"", 'none'}}, true, {})
-        local script_path = debug.getinfo(1, "S").source:sub(2)
-        local script_dir = vim.fn.fnamemodify(script_path, ":p:h")
 
-        local file = script_dir .. "/after/plugin/catppuccin.lua"
+        local file = nvim_dir .. "/after/plugin/catppuccin.lua"
+
         local lines = {}
         local modified = false
 

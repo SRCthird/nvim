@@ -6,7 +6,7 @@ local function random_color()
 end
 
 require("catppuccin").setup({
-    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    flavour = "latte", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
@@ -39,7 +39,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {
         Comment = {fg = random_color()},
-        String = {fg = "#06d6a0"},
+        String = {fg = "#327831"},
     },
     integrations = {
         cmp = true,
