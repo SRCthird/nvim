@@ -27,11 +27,10 @@ vim.g.startify_lists = {
 
 -- Set bookmarks
 vim.g.startify_bookmarks = {
-  { b = 'C:\\Users\\M312559\\AppData\\Local\\nvim' },
-  { a = '~\\AppData\\Local\\nvim' },
+  { b = string.format(nvim_dir) },
   { p = 'C:\\operations-interface' },
   { c = 'C:\\operations-nexus' },
-  { z = 'C:\\Users\\M312559\\OneDrive - MerckGroup\\Documents\\Programs' },
+  { z = string.format('%s\\OneDrive - MerckGroup\\Documents\\Programs', home_dir) },
 }
 
 -- Customize the appearance
