@@ -20,6 +20,11 @@ require("nvim-tree").setup({
         '^.git$'
     },
   },
+  git = {
+      enable = true,
+      ignore = false,
+      timeout = 500,
+  }
 })
 
 vim.keymap.set('n', '<leader>cp', ':lua copy_dir_address()<CR>', { silent = true })
