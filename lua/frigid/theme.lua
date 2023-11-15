@@ -5,7 +5,7 @@ vim.api.nvim_create_user_command(
         if level == '' then
             level = 'light'
         end
-        vim.api.nvim_echo({{"", 'none'}}, true, {})
+        vim.api.nvim_echo({ { "", 'none' } }, true, {})
 
         local file = nvim_dir .. "/after/plugin/catppuccin.lua"
 
@@ -54,8 +54,32 @@ vim.api.nvim_create_user_command(
         nargs = '?',
         desc = "Set the color theme of catppuccin to light, medium, or dark",
         complete = function(ArgLead, CmdLine, CursorPos)
-            return {'light', 'med', 'dark'}
+            return { 'light', 'med', 'dark' }
         end,
     }
 )
 
+-- Toggle annoying comments on or off
+local Run_Pretty_Colors = true
+
+function Pretty_Colors()
+    local timer = vim.loop.new_timer()
+
+    local function reload_catppuccin()
+        local file = nvim_dir .. "/after/plugin/catppuccin.lua"
+        vim.cmd('source ' .. file)
+    end
+
+    function Kill_Colors()
+        timer:stop()
+        timer:close()
+    end
+
+    timer:start(0, 500, vim.schedule_wrap(reload_catppuccin))
+
+    vim.api.nvim_command('autocmd VimLeavePre * lua Kill_Colors()')
+end
+
+if Run_Pretty_Colors then
+    Pretty_Colors()
+end
