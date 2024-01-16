@@ -60,7 +60,7 @@ vim.api.nvim_create_user_command(
 )
 
 -- Toggle annoying comments on or off
-local Run_Pretty_Colors = true
+local Run_Pretty_Colors = false
 
 function Pretty_Colors()
     local timer = vim.loop.new_timer()
