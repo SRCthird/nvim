@@ -53,4 +53,6 @@ return require('packer').startup(function(use)
     }
     use { 'lewis6991/gitsigns.nvim' }
     use { 'romgrk/barbar.nvim' }
+    use { 'pantharshit00/vim-prisma' }
+    use { 'chr4/nginx.vim' }
 end)
