@@ -45,4 +45,6 @@ vim.cmd [[ highlight StartifySlash guifg=#06d6a0 ]]
 vim.cmd [[ highlight StartifySpecial guifg=#f72585 ]]
   
 -- Open Vim with the Startify screen
-vim.api.nvim_create_autocmd("VimEnter", { pattern = "*", command = "Startify" })
+if vim.fn.argc() == 0 then
+  vim.api.nvim_create_autocmd("VimEnter", { pattern = "*", command = "Startify" })
+end
