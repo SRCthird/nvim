@@ -57,4 +57,5 @@ return require('packer').startup(function(use)
   use { 'chr4/nginx.vim' }
   use { 'vim-airline/vim-airline' }
   use { 'vim-airline/vim-airline-themes' }
+  use { 'mfussenegger/nvim-jdtls' }
 end)
