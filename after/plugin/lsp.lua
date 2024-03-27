@@ -61,7 +61,7 @@ lspconfig.lua_ls.setup({
     },
 })
 lspconfig.bashls.setup({})
-
+lspconfig.jdtls.setup({})
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
