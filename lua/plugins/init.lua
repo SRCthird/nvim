@@ -31,8 +31,11 @@ return {
       { "<leader>xy", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  -- },
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -59,4 +62,8 @@ return {
       },
     },
   },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
+  }
 }
