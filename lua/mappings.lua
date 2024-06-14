@@ -68,4 +68,16 @@ map("n", "<C-n>", function() ui.nav_file(3) end)
 map("n", "<C-s>", function() ui.nav_file(4) end)
 
 -- Tree
-map('n', '<leader>cp', ':lua copy_dir_address()<CR>', { silent = true })
+map('n', '<leader>cp', function()
+  local node = require('nvim-tree.lib').get_node_at_cursor()
+  if node and node.absolute_path then
+    local path = node.absolute_path
+    if node.entries ~= nil then
+      path = path .. '/'
+    end
+    vim.fn.system('echo ' .. path .. ' | clip.exe')
+    print('Directory path copied to clipboard!')
+  else
+    print('Failed to copy directory path.')
+  end
+end, { silent = true })
