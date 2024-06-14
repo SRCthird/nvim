@@ -37,3 +37,7 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+if vim.fn.argc() == 0 then
+  vim.api.nvim_create_autocmd("VimEnter", { pattern = "*", command = ":NvimTreeToggle" })
+end
