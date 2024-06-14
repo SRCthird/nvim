@@ -65,6 +65,7 @@ return {
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
+    commit = '31dd29'
   },
   {
     "nvim-tree/nvim-tree.lua",

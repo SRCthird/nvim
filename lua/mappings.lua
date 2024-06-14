@@ -14,8 +14,6 @@ map("n", "J", "mzJ`z") -- Append next line to current
 map("n", "<C-d>", "<C-d>zz") -- Scroll down with mouse in center
 map("n", "<C-u>", "<C-u>zz") -- Scroll up with mouse in center
 
-map("n", "<leader>gg", ":LazyGit<CR>") -- Open LazyGit UI
-
 map("x", "<leader>p", [["_dP]]) -- Insert paste in new line
 
 map('n', '<C-]>', ':NvimTreeRoot<CR>', { silent = true, noremap = true }) -- Set Tree Root
