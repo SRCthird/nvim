@@ -1,4 +1,4 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
@@ -28,11 +28,11 @@ lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = util.root_pattern("Cargo.toml"),
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        features = { "ssr" } -- features = ssr, for LSP support in leptos SSR functions
-      }
-    }
-  }
+  -- settings = {
+  --   ["rust-analyzer"] = {
+  --     cargo = {
+  --       features = { ssr }
+  --     }
+  --   }
+  -- }
 })
