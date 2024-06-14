@@ -65,5 +65,11 @@ return {
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
-  }
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = function()
+      return require "configs.nvimtree"
+    end,
+  },
 }
