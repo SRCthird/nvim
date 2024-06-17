@@ -21,21 +21,16 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use {
-    'theprimeagen/harpoon',
-    config = { function()
-      require("frigid.config.harpoon")
-    end }
-  }
+  use { 'theprimeagen/harpoon' }
   use { 'mbbill/undotree' }
   use { 'tpope/vim-fugitive' }
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
-    requires = {
     config = { function()
       require('frigid.config.lspzero')
     end },
+    requires = {
       -- LSP Support
       {
         'williamboman/mason.nvim',
