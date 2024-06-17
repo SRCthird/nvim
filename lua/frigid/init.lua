@@ -1,4 +1,4 @@
 require("frigid.remap")
 require("frigid.packer")
-require("frigid.set")
+require("frigid.options")
 require("frigid.theme")
