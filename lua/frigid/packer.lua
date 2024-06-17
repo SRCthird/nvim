@@ -50,6 +50,12 @@ return require('packer').startup(function(use)
           require('frigid.config.mason-lspconfig')
         end }
       },
+      {
+        'neovim/nvim-lspconfig',
+        config = { function()
+          require('frigid.config.lspconfig')
+        end }
+      },
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
