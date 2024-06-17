@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command(
         end
         vim.api.nvim_echo({ { "", 'none' } }, true, {})
 
-        local file = nvim_dir .. "/after/plugin/catppuccin.lua"
+        local file = NvimDir .. "/after/plugin/catppuccin.lua"
 
         local lines = {}
         local modified = false
@@ -66,7 +66,7 @@ function Pretty_Colors()
     local timer = vim.loop.new_timer()
 
     local function reload_catppuccin()
-        local file = nvim_dir .. "/after/plugin/catppuccin.lua"
+        local file = NvimDir .. "/after/plugin/catppuccin.lua"
         vim.cmd('source ' .. file)
     end
 
