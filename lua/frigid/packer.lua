@@ -77,14 +77,12 @@ return require('packer').startup(function(use)
     end,
   }
   use { 'nvim-tree/nvim-web-devicons' }
-  use { 'mhinz/vim-startify' }
   use {
     'kdheepak/lazygit.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
     },
   }
-  use { 'terrortylor/nvim-comment' }
   use {
     "windwp/nvim-autopairs",
     config = {
@@ -94,11 +92,4 @@ return require('packer').startup(function(use)
     },
   }
   use { 'lewis6991/gitsigns.nvim' }
-  use { 'romgrk/barbar.nvim' }
-  use { 'pantharshit00/vim-prisma' }
-  use { 'chr4/nginx.vim' }
-  use { 'vim-airline/vim-airline' }
-  use { 'vim-airline/vim-airline-themes' }
-  use { 'mfussenegger/nvim-jdtls' }
-  use { 'simrat39/rust-tools.nvim' }
 end)
