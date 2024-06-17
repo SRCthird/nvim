@@ -1,53 +1,41 @@
-vim.g.mapleader = " " -- Set <leader> as space
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- :Explore (Disabled with nvim-trea)
+local map = vim.keymap.set
 
-vim.keymap.set("n", "J", "mzJ`z") -- Append next line to current
+map("n", "<leader>pv", vim.cmd.Ex, { desc = ':Explore (Disabled with nvim-trea)' })
+map("n", "J", "mzJ`z", { desc = 'Append next line to current' })
+map("n", "<C-d>", "<C-d>zz", { desc = 'Scroll down with mouse in center' })
+map("n", "<C-u>", "<C-u>zz", { desc = 'Scroll up with mouse in center' })
+map("n", "<leader>gg", ":LazyGit<CR>", { desc = 'Open LazyGit UI' })
+map("x", "<leader>p", [["_dP]], { desc = 'Insert paste in new line' })
+map('n', '<C-]>', ':NvimTreeRoot<CR>', { desc = 'Set Tree Root', silent = true, noremap = true })
+map({ "n", "v" }, "<leader>y", [["+y]], { desc = 'Copy selected to clipboard' })
+map("n", "<leader>Y", [["+Y]], { desc = 'Copy line to clipboard' })
+map({ "n", "v" }, "<leader>d", [["_d]], { desc = 'Hard delete' })
+map("i", "<C-c>", "<Esc>", { desc = 'Remap to escape' })
+map("n", "<leader>f", vim.lsp.buf.format, { desc = 'Formats page based on lsp' })
+map("n", "n", "nzzzv", { desc = 'Find next search query' })
+map("n", "N", "Nzzzv", { desc = 'Find prev search query' })
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = 'Move Row Up ' })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = 'Move Row Down' })
+map("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = 'Go to next error' })
+map("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = 'Go to prev error' })
+map("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = 'Go to next item in list' })
+map("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = 'Go to prev item in list' })
+map('n', '<C-Up>', '<Up>zz', { desc = 'Center screen while scrolling up' })
+map('n', '<C-Down>', '<Down>zz', { desc = 'Center screen while scrolling down' })
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace all instances of selected word' })
+map("n", "<leader><leader>", ":w<CR>:so<CR>", { desc = 'Writes and calls the lua file' })
+map("n", "<C-x>", ":NvimTreeToggle<CR>", { desc = 'Toggle Nvim Tree View', silent = true })
+map("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree view' })
+map("n", "<C-r>", ":CommentToggle<CR>", { desc = 'Toggles Comment for current line' })
+map("v", "<C-r>", ":'<,'>CommentToggle<CR>", { desc = 'Toggles Comment for multiple lines' }) -- Toggles Comment for multiple lines
+map("n", "<TAB>", ":bnext<CR>", { desc = 'Tab to next buffer' })
+map("n", "<S-TAB>", ":bprev<CR>", { desc = 'Tab to previous buffer' })
+map("n", "<leader><TAB>", ":bdelete!<CR>", { desc = 'Deletes current buffer', remap = true })
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
+map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz") -- Scroll down with mouse in center
-vim.keymap.set("n", "<C-u>", "<C-u>zz") -- Scroll up with mouse in center
-
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>") -- Open LazyGit UI
-
-vim.keymap.set("x", "<leader>p", [["_dP]]) -- Insert paste in new line
-
-vim.keymap.set('n', '<C-]>', ':NvimTreeRoot<CR>', { silent = true, noremap = true }) -- Set Tree Root
-
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- Copy selected to clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]]) -- Copy line to clipboard
-
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- Hard delete
-
-vim.keymap.set("i", "<C-c>", "<Esc>") -- Remap to escape
-
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- Formats page based on lsp
-
-vim.keymap.set("n", "n", "nzzzv") -- Find next search query
-vim.keymap.set("n", "N", "Nzzzv") -- Find prev search query
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move Row Up 
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move Row Down
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz") -- Go to next error
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz") -- Go to prev error
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz") -- Go to next item in list 
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz") -- Go to prev item in list
-vim.keymap.set('n', '<C-Up>', '<Up>zz') -- Center screen while scrolling up
-vim.keymap.set('n', '<C-Down>', '<Down>zz') -- Center screen while scrolling down
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace all instances of selected word
-
-vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>") -- Writes and calls the lua file
-
-vim.keymap.set("n", "<C-x>", ":NvimTreeToggle<CR>", { silent = true }) --  Toggle Nvim Tree View
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) -- Toggle UndoTree view
-
-vim.keymap.set("n", "<C-r>", ":CommentToggle<CR>") -- Toggles Comment for current line
-vim.keymap.set("v", "<C-r>", ":'<,'>CommentToggle<CR>") -- Toggles Comment for multiple lines
-
-vim.keymap.set("n", "<TAB>", ":bnext<CR>") -- Tab to next buffer
-vim.keymap.set("n", "<S-TAB>", ":bprev<CR>") -- Tab to previous buffer
-vim.keymap.set("n", "<leader>qq", ":bdelete!<CR>") -- Deletes current buffer
 
 -- Commands that help me because I never let go of shift fast enough
-vim.api.nvim_create_user_command('Q', 'q', {force = true}) -- defines :Q as :q
-vim.api.nvim_create_user_command('W', 'w', {force = true}) -- Defines :W as :w
-
-vim.keymap.set("n", "<leader>dj", "ipython manage.py runserver<CR>")
+vim.api.nvim_create_user_command('Q', 'q', { desc = 'defines :Q as :q', force = true })
+vim.api.nvim_create_user_command('W', 'w', { desc = 'Defines :W as :w', force = true })
