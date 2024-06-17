@@ -34,9 +34,22 @@ return require('packer').startup(function(use)
     branch = 'v3.x',
     requires = {
       -- LSP Support
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
-      { 'neovim/nvim-lspconfig' },
+      {
+        'williamboman/mason.nvim',
+        opts = {function()
+          require('frigid.config.mason')
+        end},
+        config = { function()
+          require('mason').setup({})
+        end }
+      },
+      {
+        'williamboman/mason-lspconfig.nvim',
+        config = { function()
+          require('mason').setup({})
+          require('frigid.config.mason-lspconfig')
+        end }
+      },
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
