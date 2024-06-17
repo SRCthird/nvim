@@ -63,7 +63,7 @@ local Run_Pretty_Colors = false
 local status, _ = pcall(
   function()
     require("catppuccin")
-    Run_Pretty_Colors = true
+    -- Run_Pretty_Colors = true
   end
 )
 if not status then
