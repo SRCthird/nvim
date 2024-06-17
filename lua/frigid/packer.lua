@@ -11,12 +11,16 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     },
   }
-  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use {
+    "catppuccin/nvim", as = "catppuccin",
+    config = { function()
+      require("frigid.config.catppuccin")
+    end }
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use { 'theprimeagen/harpoon' }
   use { 'mbbill/undotree' }
   use { 'tpope/vim-fugitive' }
   use {
