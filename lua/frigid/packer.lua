@@ -33,6 +33,9 @@ return require('packer').startup(function(use)
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
     requires = {
+    config = { function()
+      require('frigid.config.lspzero')
+    end },
       -- LSP Support
       {
         'williamboman/mason.nvim',
@@ -66,9 +69,6 @@ return require('packer').startup(function(use)
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'L3MON4D3/LuaSnip' },
     },
-    config = { function()
-      require('frigid.config.lspzero')
-    end }
   }
   use {
     'nvim-tree/nvim-tree.lua',
