@@ -1,3 +1,10 @@
+local function random_color()
+    local function hex()
+        return string.format('%02x', math.random(255))
+    end
+    return '#' .. hex() .. hex() .. hex()
+end
+
 require("catppuccin").setup({
     flavour = "auto", -- latte, frappe, macchiato, mocha
     background = { -- :h background
@@ -31,7 +38,9 @@ require("catppuccin").setup({
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
     color_overrides = {},
-    custom_highlights = {},
+    custom_highlights = {
+      Comment = {fg = random_color()}
+    },
     default_integrations = true,
     integrations = {
         cmp = true,

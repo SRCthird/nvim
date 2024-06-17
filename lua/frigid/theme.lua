@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command(
         end
         vim.api.nvim_echo({ { "", 'none' } }, true, {})
 
-        local file = NvimDir .. "/after/plugin/catppuccin.lua"
+        local file = NvimDir .. "/lua/frigid/config/catppuccin.lua"
 
         local lines = {}
         local modified = false
@@ -59,14 +59,22 @@ vim.api.nvim_create_user_command(
     }
 )
 
--- Toggle annoying comments on or off
 local Run_Pretty_Colors = false
+local status, _ = pcall(
+  function()
+    require("catppuccin")
+    Run_Pretty_Colors = true
+  end
+)
+if not status then
+      print("catppuccin not found: " .. error)
+end
 
 function Pretty_Colors()
     local timer = vim.loop.new_timer()
 
     local function reload_catppuccin()
-        local file = NvimDir .. "/after/plugin/catppuccin.lua"
+        local file = NvimDir .. "/lua/frigid/config/catppuccin.lua"
         vim.cmd('source ' .. file)
     end
 
@@ -75,7 +83,7 @@ function Pretty_Colors()
         timer:close()
     end
 
-    timer:start(0, 500, vim.schedule_wrap(reload_catppuccin))
+    timer:start(0, 1000, vim.schedule_wrap(reload_catppuccin))
 
     vim.api.nvim_command('autocmd VimLeavePre * lua Kill_Colors()')
 end
