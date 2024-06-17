@@ -21,6 +21,12 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use {
+    'theprimeagen/harpoon',
+    config = { function()
+      require("frigid.config.harpoon")
+    end }
+  }
   use { 'mbbill/undotree' }
   use { 'tpope/vim-fugitive' }
   use {
