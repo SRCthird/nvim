@@ -1,4 +1,7 @@
 local map = vim.keymap.set
+local new = vim.api.nvim_create_user_command
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
 
 map("n", "<leader>pv", vim.cmd.Ex, { desc = ':Explore (Disabled with nvim-trea)' })
 map("n", "J", "mzJ`z", { desc = 'Append next line to current' })
@@ -34,8 +37,29 @@ map("n", "<leader><TAB>", ":bdelete!<CR>", { desc = 'Deletes current buffer', re
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
+map('n', '<leader>cp', function()
+  local node = require('nvim-tree.lib').get_node_at_cursor()
+  if node and node.absolute_path then
+    local path = node.absolute_path
+    if node.entries ~= nil then
+      path = path .. '/'
+    end
+    vim.fn.system('echo ' .. path .. ' | clip.exe')
+    print('Directory path copied to clipboard!')
+  else
+    print('Failed to copy directory path.')
+  end
+end, { silent = true, desc = 'Copy the file path from nvim-tree'})
+
+--- Harpoon
+map("n", "<leader>a", mark.add_file)
+map("n", "<C-e>", ui.toggle_quick_menu)
+map("n", "<C-h>", function() ui.nav_file(1) end)
+map("n", "<C-t>", function() ui.nav_file(2) end)
+map("n", "<C-n>", function() ui.nav_file(3) end)
+map("n", "<C-s>", function() ui.nav_file(4) end)
 
 
 -- Commands that help me because I never let go of shift fast enough
-vim.api.nvim_create_user_command('Q', 'q', { desc = 'defines :Q as :q', force = true })
-vim.api.nvim_create_user_command('W', 'w', { desc = 'Defines :W as :w', force = true })
+new('Q', 'q', { desc = 'defines :Q as :q', force = true })
+new('W', 'w', { desc = 'Defines :W as :w', force = true })
