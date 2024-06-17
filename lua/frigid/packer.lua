@@ -70,7 +70,12 @@ return require('packer').startup(function(use)
       require('frigid.config.lspzero')
     end }
   }
-  use { 'nvim-tree/nvim-tree.lua' }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      return require("frigid.config.nvimtree")
+    end,
+  }
   use { 'nvim-tree/nvim-web-devicons' }
   use { 'mhinz/vim-startify' }
   use {
