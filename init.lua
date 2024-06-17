@@ -1,5 +1,5 @@
-nvim_path = debug.getinfo(1, "S").source:sub(2)
-nvim_dir = vim.fn.fnamemodify(nvim_path, ":p:h")
-home_dir = os.getenv("USERPROFILE") or os.getenv("HOME")
+NvimPath = debug.getinfo(1, "S").source:sub(2)
+NvimDir = vim.fn.fnamemodify(NvimPath, ":p:h")
+HomeDir = os.getenv("USERPROFILE") or os.getenv("HOME")
 
 require("frigid")
