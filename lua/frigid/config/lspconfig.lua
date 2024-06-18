@@ -27,3 +27,5 @@ lspconfig.lua_ls.setup({
 })
 lspconfig.bashls.setup({})
 lspconfig.jdtls.setup({})
+lspconfig.prismals.setup({})
+lspconfig.tsserver.setup({})
