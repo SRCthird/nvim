@@ -7,12 +7,9 @@ return require('packer').startup(function(use)
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
-    config = { function()
+    config = function()
       require('frigid.config.lspzero')
-    end },
-    require = {
-
-    }
+    end
   }
   use {
     'nvim-telescope/telescope.nvim',
@@ -22,45 +19,41 @@ return require('packer').startup(function(use)
     },
   }
   use {
-    "catppuccin/nvim", as = "catppuccin",
-    config = { function()
-      require("frigid.config.catppuccin")
-    end }
+    'catppuccin/nvim', as = 'catppuccin',
+    config = function()
+      require('frigid.config.catppuccin')
+    end
   }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use { 'theprimeagen/harpoon' }
-  use { 'mbbill/undotree' }
   use { 'tpope/vim-fugitive' }
   use {
     'williamboman/mason.nvim',
-    opts = { function()
+    config = function()
       require('frigid.config.mason')
-    end },
-    config = { function()
-      require('mason').setup({})
-    end }
+    end
   }
   use {
     'williamboman/mason-lspconfig.nvim',
-    config = { function()
+    config = function()
       require('mason').setup({})
       require('frigid.config.mason-lspconfig')
-    end }
+    end
   }
   use {
     'neovim/nvim-lspconfig',
-    config = { function()
+    config = function()
       require('frigid.config.lspconfig')
-    end }
+    end
   }
   use {
     'hrsh7th/nvim-cmp',
-    config = { function()
+    config = function()
       require('frigid.config.cmp')
-    end }
+    end
   }
   use { 'hrsh7th/cmp-nvim-lsp' }
   use { 'L3MON4D3/LuaSnip' }
@@ -69,7 +62,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-tree/nvim-tree.lua',
     config = function()
-      return require("frigid.config.nvimtree")
+      return require('frigid.config.nvimtree')
     end,
   }
   use { 'nvim-tree/nvim-web-devicons' }
@@ -80,35 +73,17 @@ return require('packer').startup(function(use)
     },
   }
   use {
-    "windwp/nvim-autopairs",
-    config = {
-      function()
-        require("nvim-autopairs").setup {}
-      end
-    },
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup {}
+    end
   }
   use { 'lewis6991/gitsigns.nvim' }
-  use {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "User FilePost",
-    opts = {
-      indent = { char = "│", highlight = "IblChar" },
-      scope = { char = "│", highlight = "IblScopeChar" },
-    },
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "blankline")
-
-      local hooks = require "ibl.hooks"
-      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-      require("ibl").setup(opts)
-
-      dofile(vim.g.base46_cache .. "blankline")
-    end,
-  }
+  use { 'lukas-reineke/indent-blankline.nvim' }
   use {
     'SRCthird/minintro.nvim',
-    config = { function()
-      require("frigid.config.minintro")
-    end }
+    config = function()
+      require('frigid.config.minintro')
+    end
   }
 end)

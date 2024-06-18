@@ -1,5 +1,5 @@
-local options = {
-  ensure_installed = { "lua-language-server",  'stylua' }, -- not an option from mason.nvim
+require('mason').setup({
+  ensure_installed = { "lua-language-server", 'stylua' },  -- not an option from mason.nvim
 
   PATH = "skip",
 
@@ -23,7 +23,4 @@ local options = {
   },
 
   max_concurrent_installers = 10,
-}
-
-return options
-
+})
