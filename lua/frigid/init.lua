@@ -2,27 +2,3 @@ require("frigid.packer")
 require("frigid.options")
 require("frigid.remap")
 require("frigid.theme")
-require("frigid.config.startup").setup({
-  colors = {
-    "#f72585",
-    "#b5179e",
-    "#7209b7",
-    "#560bad",
-    "#480ca8",
-    "#3a0ca3",
-    "#3f37c9",
-    "#4361ee",
-    "#4895ef",
-    "#4cc9f0",
-    "#4cc9f0",
-    "#4895ef",
-    "#4361ee",
-    "#3f37c9",
-    "#3a0ca3",
-    "#480ca8",
-    "#560bad",
-    "#7209b7",
-    "#b5179e",
-    "#f72585",
-  }
-})

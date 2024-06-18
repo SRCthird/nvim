@@ -105,4 +105,10 @@ return require('packer').startup(function(use)
       dofile(vim.g.base46_cache .. "blankline")
     end,
   }
+  use {
+    'SRCthird/minintro.nvim',
+    config = { function()
+      require("frigid.config.minintro")
+    end }
+  }
 end)
