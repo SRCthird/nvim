@@ -30,41 +30,42 @@ return require('packer').startup(function(use)
     config = { function()
       require('frigid.config.lspzero')
     end },
-    requires = {
-      -- LSP Support
-      {
-        'williamboman/mason.nvim',
-        opts = {function()
-          require('frigid.config.mason')
-        end},
-        config = { function()
-          require('mason').setup({})
-        end }
-      },
-      {
-        'williamboman/mason-lspconfig.nvim',
-        config = { function()
-          require('mason').setup({})
-          require('frigid.config.mason-lspconfig')
-        end }
-      },
-      {
-        'neovim/nvim-lspconfig',
-        config = { function()
-          require('frigid.config.lspconfig')
-        end }
-      },
-      -- Autocompletion
-      {
-        'hrsh7th/nvim-cmp',
-        config = { function()
-          require('frigid.config.cmp')
-        end }
-      },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'L3MON4D3/LuaSnip' },
-    },
+    require = {
+
+    }
   }
+  use {
+    'williamboman/mason.nvim',
+    opts = { function()
+      require('frigid.config.mason')
+    end },
+    config = { function()
+      require('mason').setup({})
+    end }
+  }
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    config = { function()
+      require('mason').setup({})
+      require('frigid.config.mason-lspconfig')
+    end }
+  }
+  use {
+    'neovim/nvim-lspconfig',
+    config = { function()
+      require('frigid.config.lspconfig')
+    end }
+  }
+  use {
+    'hrsh7th/nvim-cmp',
+    config = { function()
+      require('frigid.config.cmp')
+    end }
+  }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'L3MON4D3/LuaSnip' }
+  use { 'prisma/vim-prisma' }
+  use { 'chr4/nginx.vim' }
   use {
     'nvim-tree/nvim-tree.lua',
     config = function()
