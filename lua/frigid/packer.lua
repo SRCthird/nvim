@@ -35,14 +35,13 @@ return require('packer').startup(function(use)
     'williamboman/mason.nvim',
     config = function()
       require('frigid.config.mason')
-    end
-  })
-  use({
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require('mason').setup({})
-      require('frigid.config.mason-lspconfig')
-    end
+    end,
+    requires = {
+      'williamboman/mason-lspconfig.nvim',
+      config = function()
+        require('frigid.config.mason-lspconfig')
+      end
+    }
   })
   use({
     'neovim/nvim-lspconfig',
