@@ -20,3 +20,7 @@ end)
 lsp.set_preferences({
   sign_icon = {}
 })
+
+return {
+  lsp = lsp
+}
