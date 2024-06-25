@@ -1,7 +1,7 @@
 require('mason').setup({
   ensure_installed = { "lua-language-server", 'stylua' },  -- not an option from mason.nvim
 
-  PATH = "skip",
+  PATH = "prepend",
 
   ui = {
     icons = {
