@@ -5,13 +5,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use({ 'wbthomason/packer.nvim' })
   use({
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    config = function()
-      require('frigid.config.lspzero')
-    end
-  })
-  use({
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     requires = {
@@ -47,6 +40,13 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     config = function()
       require('frigid.config.lspconfig')
+    end
+  })
+  use({
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    config = function()
+      require('frigid.config.lspzero')
     end
   })
   use({
