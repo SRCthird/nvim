@@ -21,6 +21,9 @@ opt.scrolloff = 8
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.updatetime = 50
+if SystemOS == "Windows" then
+  opt.shell = 'pwsh'
+end
 
 g.mapleader = " "
 
