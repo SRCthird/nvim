@@ -1,3 +1,4 @@
+require('frigid.config.mason')
 require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',

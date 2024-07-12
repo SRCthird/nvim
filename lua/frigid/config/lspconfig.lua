@@ -1,7 +1,4 @@
 local lspconfig = require("lspconfig")
-local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities(lsp_capabilities)
-local lsp = require("frigid.config.lspzero").lsp
 
 lspconfig.pyright.setup({})
 lspconfig.lua_ls.setup({
@@ -28,10 +25,6 @@ lspconfig.lua_ls.setup({
       },
     },
   },
-})
-lspconfig.julials.setup({
-  on_attach = lsp.on_attach,
-  capabilities = cmp_capabilities
 })
 lspconfig.bashls.setup({})
 lspconfig.jdtls.setup({})
