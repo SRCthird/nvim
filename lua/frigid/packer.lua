@@ -5,6 +5,28 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use({ 'wbthomason/packer.nvim' })
   use({
+    'williamboman/mason.nvim',
+  })
+  use({
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('frigid.config.mason-lspconfig')
+    end,
+  })
+  use({
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('frigid.config.lspconfig')
+    end,
+  })
+  use({
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    config = function()
+      require('frigid.config.lspzero')
+    end,
+  })
+  use({
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     requires = {
@@ -24,31 +46,6 @@ return require('packer').startup(function(use)
   })
   use({ 'theprimeagen/harpoon' })
   use({ 'tpope/vim-fugitive' })
-  use({
-    'williamboman/mason.nvim',
-    config = function()
-      require('frigid.config.mason')
-    end,
-    requires = {
-      'williamboman/mason-lspconfig.nvim',
-      config = function()
-        require('frigid.config.mason-lspconfig')
-      end
-    }
-  })
-  use({
-    'neovim/nvim-lspconfig',
-    config = function()
-      require('frigid.config.lspconfig')
-    end
-  })
-  use({
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    config = function()
-      require('frigid.config.lspzero')
-    end
-  })
   use({
     'hrsh7th/nvim-cmp',
     config = function()
