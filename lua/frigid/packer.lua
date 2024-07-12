@@ -68,6 +68,22 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim',
     },
+    config = function()
+      if SystemOS == "Windows" then
+        vim.schedule(function()
+          vim.api.nvim_create_user_command(
+            "LazyGit",
+            function()
+              local current = vim.opt.shell
+              vim.opt.shell='cmd'
+              require'lazygit'.lazygit()
+              vim.opt.shell=current
+            end,
+            { force = true }
+          )
+        end)
+      end
+    end
   })
   use({
     'windwp/nvim-autopairs',
