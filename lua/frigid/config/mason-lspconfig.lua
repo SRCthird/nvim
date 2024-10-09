@@ -1,7 +1,7 @@
 require('frigid.config.mason')
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'tsserver',
+    -- 'tsserver',
     'eslint',
     'rust_analyzer',
     'pyright',
