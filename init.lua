@@ -12,4 +12,4 @@ SystemOS = (function()
   end
 end)()
 
-require("frigid")
+require("config")
