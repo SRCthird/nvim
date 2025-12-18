@@ -22,7 +22,6 @@ return {
               package_uninstalled = " 󰚌",
             },
             keymaps = {
-              install_server = "a",
               uninstall_server = "d",
             },
           },
