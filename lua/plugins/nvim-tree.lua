@@ -6,6 +6,10 @@ return {
   },
   config = function()
     require("nvim-tree").setup({
+      git = {
+        enable = true,
+        ignore = false
+      },
       disable_netrw = true,
       hijack_netrw = true,
       update_cwd = true,
